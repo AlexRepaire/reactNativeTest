@@ -1,15 +1,12 @@
 import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity, Button, Pressable} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {View, Text, StyleSheet, TouchableOpacity, Pressable, Button} from 'react-native';
 
 const GoalItem = (props) => {
     return (
       <TouchableOpacity activeOpacity={0.8} >
         <View style={styles.listItem}>
           <Text style={styles.text}>{props.title}</Text>
-          <Pressable style={styles.button} onPress={props.onDelete.bind(this, props.id)}>
-            <Text style={{color:'white'}}>X</Text>
-          </Pressable>
+          <Button color="#C04A30" title="X" onPress={props.onDelete.bind(this, props.id)}/>
         </View>
       </TouchableOpacity>
     )
@@ -30,8 +27,4 @@ const styles = StyleSheet.create({
     text: {
       width: '90%'
     },
-    button: {
-      backgroundColor: '#C04A30',
-      padding: 6
-    }
   });
